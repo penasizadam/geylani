@@ -102,4 +102,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
         });
     }
+
+    // Product image lightbox (products page)
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const previewImages = document.querySelectorAll('.product-preview');
+
+    if (lightbox && lightboxImage && lightboxClose && previewImages.length > 0) {
+        const closeLightbox = () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            lightboxImage.src = '';
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        previewImages.forEach((image) => {
+            image.addEventListener('click', () => {
+                lightboxImage.src = image.currentSrc || image.src;
+                lightboxImage.alt = image.alt || 'Urun gorseli';
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    }
 });

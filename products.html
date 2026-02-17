@@ -101,23 +101,24 @@
             </section>
 
             <!-- Product Grid -->
-            <section class="py-24 px-6 md:px-20">
+            <section class="py-16 md:py-24 px-6 md:px-20">
                 <div class="max-w-7xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-center">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-center items-start">
                         <!-- Product Card 1: Yuvak -->
                         <div
                             class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
-                            <div class="h-80 relative overflow-hidden bg-neutral-100 flex items-center justify-center">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100 flex items-center justify-center">
                                 <img alt="Geylani Tarım Yuvak"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
                                     id="product-img-1" src="images/yuvak.jpg"
+                                    loading="lazy" decoding="async"
                                     onerror="this.src='https://images.unsplash.com/photo-1594913785202-58135893390c?auto=format&fit=crop&w=800&q=80'; this.classList.add('opacity-40');" />
                                 <div
                                     class="absolute top-6 right-6 bg-primary text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg z-10">
                                     Özel Üretim
                                 </div>
                             </div>
-                            <div class="p-8">
+                            <div class="p-6 md:p-8">
                                 <div class="flex justify-between items-start mb-6">
                                     <h3
                                         class="text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-primary transition-colors leading-tight">
@@ -161,7 +162,263 @@
                             </div>
                         </div>
 
-                        <!-- Bu kısma yeni ürünler eklenebilir -->
+                        <!-- Product Card 2: Cift Yonlu Yuvak -->
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100 flex items-center justify-center">
+                                <img alt="Geylani Tarim Cift Yonlu Yuvak"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/ciftyuvak.jpg"
+                                    loading="lazy" decoding="async"
+                                    onerror="this.src='https://images.unsplash.com/photo-1594913785202-58135893390c?auto=format&fit=crop&w=800&q=80'; this.classList.add('opacity-40');" />
+                                <div
+                                    class="absolute top-6 right-6 bg-neutral-900 text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg z-10">
+                                    Çift Yönlü
+                                </div>
+                            </div>
+                            <div class="p-6 md:p-8">
+                                <div class="flex justify-between items-start mb-6 gap-3">
+                                    <h3
+                                        class="text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-primary transition-colors leading-tight">
+                                        Çift Yönlü Yuvak</h3>
+                                    <span
+                                        class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full shrink-0">ÖZEL
+                                        ÖLÇÜ</span>
+                                </div>
+                                <div class="space-y-5 mb-8">
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-xl">straighten</span>
+                                        </div>
+                                        <span class="text-sm leading-tight"><strong>Çap:</strong> 40</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined text-primary text-xl">weight</span>
+                                        </div>
+                                        <span class="text-sm leading-tight"><strong>Ağırlık:</strong> 700 - 800
+                                            KG</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-xl">settings_suggest</span>
+                                        </div>
+                                        <p class="text-sm leading-snug">İstenilen her ölçüde üretilir. Barana ve mibzer
+                                            arkasına uygundur.</p>
+                                    </div>
+                                </div>
+                                <a href="contact.html"
+                                    class="block w-full py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-center font-bold rounded-2xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-lg active:scale-95">
+                                    Fiyat Teklifi Al
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3: Tekerli Yuvak -->
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100 flex items-center justify-center">
+                                <img alt="Geylani Tarim Tekerli Yuvak"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/tekerliyuvak.jpg" loading="lazy" decoding="async"
+                                    onerror="this.src='https://images.unsplash.com/photo-1594913785202-58135893390c?auto=format&fit=crop&w=800&q=80'; this.classList.add('opacity-40');" />
+                                <div
+                                    class="absolute top-6 right-6 bg-primary text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg z-10">
+                                    Tekerli
+                                </div>
+                            </div>
+                            <div class="p-6 md:p-8">
+                                <div class="flex justify-between items-start mb-6 gap-3">
+                                    <h3
+                                        class="text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-primary transition-colors leading-tight">
+                                        Tekerli Yuvak</h3>
+                                    <span
+                                        class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full shrink-0">1
+                                        TON</span>
+                                </div>
+                                <div class="space-y-5 mb-8">
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-xl">straighten</span>
+                                        </div>
+                                        <span class="text-sm leading-tight"><strong>Çap:</strong> 50</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined text-primary text-xl">straighten</span>
+                                        </div>
+                                        <span class="text-sm leading-tight"><strong>Uzunluk:</strong> 4.30 mt</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined text-primary text-xl">weight</span>
+                                        </div>
+                                        <span class="text-sm leading-tight"><strong>Ağırlık:</strong> 1 ton</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-xl">settings_suggest</span>
+                                        </div>
+                                        <p class="text-sm leading-snug">Tekerli bütün yuvak çeşitlerine uygulanır.
+                                            Mibzer, barana ve benzeri ekipmanların arkasına çekilir.</p>
+                                    </div>
+                                </div>
+                                <a href="contact.html"
+                                    class="block w-full py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-center font-bold rounded-2xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-lg active:scale-95">
+                                    Fiyat Teklifi Al
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4: Su ve Mazot Tankerleri -->
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100 flex items-center justify-center">
+                                <img alt="Geylani Tarim Su ve Mazot Tankeri"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/sumazot.jpg" loading="lazy" decoding="async"
+                                    onerror="this.src='https://images.unsplash.com/photo-1594913785202-58135893390c?auto=format&fit=crop&w=800&q=80'; this.classList.add('opacity-40');" />
+                                <div
+                                    class="absolute top-6 right-6 bg-neutral-900 text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg z-10">
+                                    Tanker
+                                </div>
+                            </div>
+                            <div class="p-6 md:p-8">
+                                <div class="flex justify-between items-start mb-6 gap-3">
+                                    <h3
+                                        class="text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-primary transition-colors leading-tight">
+                                        Su ve Mazot Tankerleri</h3>
+                                    <span
+                                        class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full shrink-0">AYAKLI
+                                        SEHPALI</span>
+                                </div>
+
+                                <div class="grid grid-cols-3 gap-3 mb-6">
+                                    <img alt="Su ve mazot tankeri detay 1"
+                                        class="product-preview h-20 w-full rounded-xl object-cover cursor-zoom-in border border-neutral-200 dark:border-neutral-700"
+                                        src="images/sumazot.jpg" loading="lazy" decoding="async" />
+                                    <img alt="Su ve mazot tankeri detay 2"
+                                        class="product-preview h-20 w-full rounded-xl object-cover cursor-zoom-in border border-neutral-200 dark:border-neutral-700"
+                                        src="images/sumazot1.jpg" loading="lazy" decoding="async" />
+                                    <img alt="Su ve mazot tankeri detay 3"
+                                        class="product-preview h-20 w-full rounded-xl object-cover cursor-zoom-in border border-neutral-200 dark:border-neutral-700"
+                                        src="images/sumazot2.jpg" loading="lazy" decoding="async" />
+                                </div>
+
+                                <div class="space-y-5 mb-8">
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined text-primary text-xl">inventory_2</span>
+                                        </div>
+                                        <span class="text-sm leading-tight"><strong>Kapasite:</strong> 3 ton, 5 ton, 6 ton, 10 ton</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-neutral-600 dark:text-neutral-400">
+                                        <div
+                                            class="size-10 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined text-primary text-xl">construction</span>
+                                        </div>
+                                        <p class="text-sm leading-snug">Ayaklı ve sehpalı su-mazot tankerleri üretilir.</p>
+                                    </div>
+                                </div>
+                                <a href="contact.html"
+                                    class="block w-full py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-center font-bold rounded-2xl hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-lg active:scale-95">
+                                    Fiyat Teklifi Al
+                                </a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 1"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni1.jpg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 2"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni2.jpg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 3"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni3.jpg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 4"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni4.jpg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 5"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni5.jpg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 6"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni6.jpg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 7"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni7.jpg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 8"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni8.jpeg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+
+                        <div
+                            class="group bg-white dark:bg-neutral-800 rounded-[2.5rem] overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2">
+                            <div class="h-80 sm:h-96 md:h-[26rem] relative overflow-hidden bg-neutral-100">
+                                <img alt="Urun gorseli yeni 9"
+                                    class="product-preview w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-zoom-in"
+                                    src="images/yeni9.jpeg" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -189,6 +446,16 @@
                         class="md:hidden"> Tüm hakları saklıdır.</p>
             </div>
         </footer>
+    </div>
+    <div id="image-lightbox"
+        class="hidden fixed inset-0 z-[1100] bg-black/85 backdrop-blur-sm p-4 md:p-8 items-center justify-center">
+        <button id="lightbox-close"
+            class="absolute top-4 right-4 md:top-6 md:right-6 size-10 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center"
+            type="button" aria-label="Onizlemeyi kapat">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <img id="lightbox-image" src="" alt="Urun gorseli"
+            class="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-xl shadow-2xl" />
     </div>
     <script src="js/main.js"></script>
 </body>
