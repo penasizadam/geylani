@@ -51,16 +51,13 @@
         <!-- Navigation Bar -->
         <header
             class="sticky top-0 z-50 w-full border-b border-neutral-100 dark:border-neutral-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
-            <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-2xl">eco</span>
-                    </div>
-                    <a href="index.html"
-                        class="text-neutral-900 dark:text-white text-xl font-bold tracking-tight">Geylani <span
-                            class="text-primary">Tarım</span></a>
-                </div>
-                <nav class="hidden md:flex items-center gap-10">
+            <div class="max-w-7xl mx-auto flex items-center justify-start">
+                <a href="index.html" class="flex flex-col leading-tight">
+                    <span class="text-neutral-900 dark:text-white text-2xl font-black tracking-tight">GEYLANI</span>
+                    <span class="text-primary text-sm font-semibold tracking-[0.28em] uppercase">Tarım</span>
+                </a>
+                <nav id="site-nav"
+                    class="hidden md:flex md:ml-16 lg:ml-24 flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 absolute md:static top-full left-0 w-full md:w-auto bg-white/95 dark:bg-background-dark/95 md:bg-transparent md:dark:bg-transparent backdrop-blur-md md:backdrop-blur-0 border-b border-neutral-100 dark:border-neutral-800 md:border-0 p-6 md:p-0 shadow-xl md:shadow-none">
                     <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html">Anasayfa</a>
                     <a class="text-sm font-semibold hover:text-primary transition-colors"
                         href="about.html">Hakkımızda</a>
@@ -69,12 +66,8 @@
                     <a class="text-sm font-bold text-primary border-b-2 border-primary pb-1"
                         href="contact.html">İletişim</a>
                 </nav>
-                <div class="flex items-center gap-4">
-                    <button
-                        class="hidden sm:flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 shadow-lg shadow-primary/20">
-                        Teklif Al
-                    </button>
-                    <button class="md:hidden flex items-center">
+                <div class="flex items-center ml-auto md:ml-6">
+                    <button class="md:hidden flex items-center" type="button" aria-label="Menüyü aç/kapat">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
@@ -100,93 +93,116 @@
                         <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
                             <span class="material-symbols-outlined text-primary">mail</span> Bize Mesaj Gönderin
                         </h2>
-                        <form class="space-y-6">
+                        <form id="contactForm" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
-                                    <label class="text-sm font-bold">Ad Soyad</label>
-                                    <input type="text" placeholder="Ahmet Yılmaz"
-                                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 focus:ring-2 focus:ring-primary outline-none transition-all">
+                                    <label class="text-sm font-bold text-neutral-700 dark:text-neutral-300">Ad Soyad <span class="text-red-500">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required
+                                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all shadow-sm hover:shadow-md">
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-sm font-bold">E-posta</label>
-                                    <input type="email" placeholder="ahmet@example.com"
-                                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 focus:ring-2 focus:ring-primary outline-none transition-all">
+                                    <label class="text-sm font-bold text-neutral-700 dark:text-neutral-300">E-posta <span class="text-red-500">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="ornek@eposta.com" required
+                                        class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all shadow-sm hover:shadow-md">
                                 </div>
                             </div>
                             <div class="space-y-2">
-                                <label class="text-sm font-bold">Konu</label>
-                                <select
-                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 focus:ring-2 focus:ring-primary outline-none transition-all">
-                                    <option>Ürün Bilgisi</option>
-                                    <option>Teknik Destek</option>
-                                    <option>Satış/Teklif</option>
-                                    <option>Diğer</option>
+                                <label class="text-sm font-bold text-neutral-700 dark:text-neutral-300">Konu <span class="text-red-500">*</span></label>
+                                <select id="subject" name="subject" required
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all shadow-sm hover:shadow-md appearance-none">
+                                    <option value="" disabled selected>İletişim konusunu seçin...</option>
+                                    <option value="Ürün Bilgisi">Ürün Bilgisi</option>
+                                    <option value="Teknik Destek">Teknik Destek</option>
+                                    <option value="Satış/Teklif">Satış & Teklif</option>
+                                    <option value="Servis Talebi">Servis Talebi</option>
+                                    <option value="Diğer">Diğer</option>
                                 </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <span class="material-symbols-outlined text-neutral-400">arrow_drop_down</span>
+                                </div>
                             </div>
                             <div class="space-y-2">
-                                <label class="text-sm font-bold">Mesajınız</label>
-                                <textarea rows="4" placeholder="Size nasıl yardımcı olabiliriz?"
-                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
+                                <label class="text-sm font-bold text-neutral-700 dark:text-neutral-300">Mesajınız <span class="text-red-500">*</span></label>
+                                <textarea id="message" name="message" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..." required
+                                    class="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all shadow-sm hover:shadow-md resize-none"></textarea>
                             </div>
-                            <button
-                                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-95 flex items-center justify-center gap-2">
-                                Mesajı Gönder <span class="material-symbols-outlined">send</span>
+                            <button type="submit"
+                                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:shadow-xl hover:shadow-primary/30 hover:bg-primary/90 transition-all active:scale-95 flex items-center justify-center gap-2 text-lg">
+                                <span class="material-symbols-outlined">send</span> Mesajı Gönder
                             </button>
                         </form>
+                        
+                        <!-- Success Message -->
+                        <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-green-800">Mesajınız gönderildi!</h3>
+                                    <p class="text-green-700 text-sm">En kısa sürede sizinle iletişime geçeceğiz.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Contact Info -->
                     <div class="flex-1 space-y-8">
-                        <div class="grid grid-cols-1 gap-6">
+                        <div class="space-y-6">
                             <div
-                                class="p-6 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 flex gap-4">
-                                <div
-                                    class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                                    <span class="material-symbols-outlined">call</span>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold">Bizi Arayın</h3>
-                                    <p class="text-neutral-600 dark:text-neutral-400">+90 (XXX) XXX XX XX</p>
-                                    <p class="text-xs text-neutral-400 mt-1">Pzt-Cmt: 08:00 - 18:00</p>
+                                class="p-6 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-all duration-300">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                        <span class="material-symbols-outlined text-xl">call</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg mb-1">Bizi Arayın</h3>
+                                        <a class="text-neutral-600 dark:text-neutral-400 font-medium hover:text-primary transition-colors"
+                                            href="tel:+903241234567">0 (324) 123 45 67</a>
+                                        <p class="text-xs text-neutral-500 mt-1">Pazartesi - Cumartesi: 08:00 - 18:00</p>
+                                    </div>
                                 </div>
                             </div>
+                            
                             <div
-                                class="p-6 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 flex gap-4">
-                                <div
-                                    class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                                    <span class="material-symbols-outlined">alternate_email</span>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold">E-posta</h3>
-                                    <p class="text-neutral-600 dark:text-neutral-400">info@geylanitarim.com</p>
-                                    <p class="text-xs text-neutral-400 mt-1">24 saat içinde yanıt</p>
+                                class="p-6 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-all duration-300">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                        <span class="material-symbols-outlined text-xl">alternate_email</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg mb-1">E-posta</h3>
+                                        <p class="text-neutral-600 dark:text-neutral-400 font-medium">info@geylanitarim.com</p>
+                                        <p class="text-xs text-neutral-500 mt-1">24 saat içinde yanıt verilir</p>
+                                    </div>
                                 </div>
                             </div>
+                            
                             <div
-                                class="p-6 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 flex gap-4">
-                                <div
-                                    class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                                    <span class="material-symbols-outlined">location_on</span>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold">Genel Merkez</h3>
-                                    <p class="text-neutral-600 dark:text-neutral-400">Mersin, Türkiye</p>
+                                class="p-6 bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-all duration-300">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                        <span class="material-symbols-outlined text-xl">location_on</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg mb-1">Genel Merkez</h3>
+                                        <p class="text-neutral-600 dark:text-neutral-400 font-medium">Mersin, Türkiye</p>
+                                        <p class="text-xs text-neutral-500 mt-1">Tarım Bölgesi, Sanayi Sitesi</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Map Placeholder -->
                         <div
-                            class="relative rounded-3xl overflow-hidden shadow-lg h-64 border border-neutral-100 dark:border-neutral-700">
-                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCiU6mR9-_q2M6m6n0n9m6n9m6n9m6n9m6n9m6n9m6n9m6n9m6n9m6n9m6n9"
-                                alt="Map" class="w-full h-full object-cover grayscale opacity-50">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="bg-white dark:bg-neutral-900 px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-primary">location_on</span>
-                                    <span class="font-bold text-sm text-neutral-900 dark:text-white">Geylani Tarım
-                                        HQ</span>
+                            class="relative rounded-3xl overflow-hidden shadow-lg h-64 border border-neutral-100 dark:border-neutral-700 bg-gray-200 flex items-center justify-center">
+                            <div class="text-center p-4">
+                                <div class="text-4xl text-gray-400 mb-2">
+                                    <span class="material-symbols-outlined">location_on</span>
                                 </div>
+                                <h3 class="font-bold text-gray-600 mb-1">Mersin, Türkiye</h3>
+                                <p class="text-sm text-gray-500">Geylani Tarım Genel Merkezi</p>
                             </div>
                         </div>
                     </div>
@@ -222,9 +238,11 @@
                     <div class="space-y-6">
                         <h4 class="font-bold uppercase tracking-widest text-xs">Destek</h4>
                         <ul class="space-y-4 text-sm text-neutral-600 dark:text-neutral-400">
-                            <li><a class="hover:text-primary transition-colors" href="#">Kullanım Kılavuzları</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Garanti Bilgisi</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Yedek Parça</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="contact.html">Kullanım
+                                    Kılavuzları</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="contact.html">Garanti Bilgisi</a>
+                            </li>
+                            <li><a class="hover:text-primary transition-colors" href="contact.html">Yedek Parça</a></li>
                         </ul>
                     </div>
                 </div>

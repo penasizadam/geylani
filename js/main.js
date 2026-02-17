@@ -5,42 +5,46 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Logic
     const menuBtn = document.querySelector('header button.md\\:hidden');
-    const nav = document.querySelector('header nav');
+    const nav = document.getElementById('site-nav');
 
     if (menuBtn && nav) {
+        menuBtn.setAttribute('aria-controls', nav.id);
+        menuBtn.setAttribute('aria-expanded', 'false');
+
+        const closeMenu = () => {
+            nav.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        };
+
+        const toggleMenu = () => {
+            nav.classList.toggle('hidden');
+            const isExpanded = !nav.classList.contains('hidden');
+            menuBtn.setAttribute('aria-expanded', String(isExpanded));
+        };
+
         menuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            nav.classList.toggle('hidden');
-            nav.classList.toggle('absolute');
-            nav.classList.toggle('top-full');
-            nav.classList.toggle('left-0');
-            nav.classList.toggle('w-full');
-            nav.classList.toggle('bg-white');
-            nav.classList.toggle('dark:bg-background-dark');
-            nav.classList.toggle('flex');
-            nav.classList.toggle('flex-col');
-            nav.classList.toggle('p-6');
-            nav.classList.toggle('border-b');
-            nav.classList.toggle('border-neutral-100');
-            nav.classList.toggle('dark:border-neutral-800');
-            nav.classList.toggle('z-50');
-            nav.classList.toggle('shadow-xl');
+            toggleMenu();
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !menuBtn.contains(e.target) && !nav.classList.contains('hidden')) {
-                nav.classList.add('hidden');
-                nav.classList.remove('absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'dark:bg-background-dark', 'flex', 'flex-col', 'p-6', 'border-b', 'border-neutral-100', 'dark:border-neutral-800', 'z-50', 'shadow-xl');
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+                closeMenu();
             }
         });
 
         // Close menu when clicking a link
         nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.add('hidden');
-                nav.classList.remove('absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'dark:bg-background-dark', 'flex', 'flex-col', 'p-6', 'border-b', 'border-neutral-100', 'dark:border-neutral-800', 'z-50', 'shadow-xl');
-            });
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !nav.classList.contains('hidden')) {
+                closeMenu();
+                menuBtn.focus();
+            }
         });
     }
 
@@ -53,4 +57,49 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('shadow-md');
         }
     });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Basic validation
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                alert('Lütfen tüm alanları doldurun!');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                alert('Geçerli bir e-posta adresi girin!');
+                return;
+            }
+            
+            // Show success message
+            contactForm.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+            
+            // In a real application, you would send this data to a server
+            console.log('Form data:', formData);
+            
+            // Reset form after 5 seconds
+            setTimeout(() => {
+                contactForm.reset();
+                contactForm.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+            }, 5000);
+        });
+    }
 });
